@@ -66,7 +66,6 @@ count_matching_masses <- function(protein_masses, sample) {
 }
 
 # Function 6
-
 ggbarplot <- function(peptide_counts_table) {
   
   library(ggplot2)
