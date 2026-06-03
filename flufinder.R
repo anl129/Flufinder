@@ -1,3 +1,5 @@
+# Function 2
+
 trypsinize <- function(proteins) {
   
   #Opening stringr for simple string manipulation
@@ -7,9 +9,13 @@ trypsinize <- function(proteins) {
   lapply(proteins, str_split_1, pattern="(?<=R|K)")
 }
 
-trypsinize(proteins)
+# Function 1
+upload_fasta <- function(fasta_filename) {
+  
+  library(seqinr)
+  
+  #Reading the fasta file
+  read.fasta(fasta_filename, seqtype = "AA", as.string = TRUE,
+             set.attributes = FALSE)
 
-trypsinize(proteins)$A
-
-meow
-
+}
