@@ -51,3 +51,20 @@ splitpeptides_to_masses <- function(aa) {
   lapply(peptide_masses, unlist)
   
 }
+
+# Function 5
+count_matching_masses <- function(protein_masses, sample) {
+  
+  #Virus masses is a list of masses for each protein so we use sapply to iterate over the list; sum (of TRUEs) is used to count the number of times a mass in the sample is found (%in%) among the masses of each of the proteins (virus_masses); note that masses are converted into strings (as.character) because %in% is not very reliable with numbers
+  df <- as.data.frame(sapply(protein_masses, function (x)
+    sum(as.character(sample) %in% as.character(x))))
+  
+  # Adding peptide_counts as the column name of the counts column
+  names(df) <- "peptide_counts"
+  
+  return(df)
+}
+
+# Function 6
+
+  
